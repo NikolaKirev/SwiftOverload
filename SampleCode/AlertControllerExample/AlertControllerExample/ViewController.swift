@@ -40,6 +40,9 @@ class ViewController: UIViewController {
         }
         actionSheetController.addAction(choosePictureAction)
         
+        //We need to provide a popover sourceView when using it on iPad
+        actionSheetController.popoverPresentationController?.sourceView = sender as UIView;
+        
         //Present the AlertController
         self.presentViewController(actionSheetController, animated: true, completion: nil)
     }
